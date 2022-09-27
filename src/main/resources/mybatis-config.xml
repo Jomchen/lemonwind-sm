@@ -19,8 +19,11 @@
         </environment>
     </environments>
 
+<!--    <mappers>-->
+<!--        <mapper resource="xmlmapper/UserMapper.xml"/>-->
+<!--    </mappers>-->
     <mappers>
-        <mapper resource="xmlmapper/UserMapper.xml"/>
+        <package name="com.jomkie.sm.mapper"/>
     </mappers>
 
 </configuration>
