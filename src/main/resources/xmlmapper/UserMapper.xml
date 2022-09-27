@@ -1,20 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jomkie.sm.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="com.jomkie.sm.entity.User">
-        <result column="id" property="id" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="name" property="name" />
-        <result column="age" property="age" />
-        <result column="sex" property="sex" />
-        <result column="email" property="email" />
-        <result column="real_name" property="realName" />
-    </resultMap>
-
-    <!-- 通用查询映射结果 -->
-    <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
         id,
         create_time,
@@ -23,7 +12,7 @@
     </sql>
 
     <select id="findAll" resultType="com.jomkie.sm.entity.User">
-       SELECT * FROM jo_user WHERE age BETWEEN #{beginAge} AND #{endAge} AND sex = #{sex}
+        SELECT * FROM jo_user WHERE age BETWEEN #{beginAge} AND #{endAge} AND sex = #{sex}
     </select>
 
 </mapper>

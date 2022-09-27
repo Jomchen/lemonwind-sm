@@ -1,7 +1,6 @@
 package com.jomkie.sm.mapper;
 
 import com.jomkie.sm.entity.User;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -16,6 +15,6 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    List<User> findAll(@Param("beginAge") Integer beginAge, @Param("endAge") Integer endAge, Integer sex);
+    List<User> findAll(@Param("beginAge") Integer beginAge, @Param("endAge") Integer endAge, @Param("sex") Integer sex);
 
 }
