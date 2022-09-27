@@ -1,6 +1,5 @@
 package com.jomkie.sm.entity;
 
-import java.io.Serializable;
 
 import com.jomkie.sm.common.JomkieEntity;
 import lombok.Data;
@@ -35,4 +34,17 @@ public class User extends JomkieEntity<User> {
 
     private String realName;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", sex=" + sex +
+                ", email='" + email + '\'' +
+                ", realName='" + realName + '\'' +
+                '}';
+    }
 }

@@ -2,6 +2,7 @@ package com.jomkie.sm;
 
 import com.jomkie.sm.entity.User;
 import com.jomkie.sm.mapper.UserMapper;
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -14,9 +15,8 @@ import java.util.List;
 public class JomkieSmApplication {
 
     public static void main(String[] args) throws IOException {
-        String rootPath = JomkieSmApplication.class.getResource("/").getPath();
-        System.out.println(rootPath);
-        InputStream inputStream = new FileInputStream(rootPath + "/mybatis-config.xml");
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);

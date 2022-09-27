@@ -4,6 +4,10 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="config.properties"/>
+    <settings>
+        <setting name="autoMappingBehavior" value="FULL"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
     <typeAliases>
         <package name="com.jomkie.sm.entity"/>
     </typeAliases>
@@ -19,10 +23,12 @@
         </environment>
     </environments>
 
-<!--    <mappers>-->
-<!--        <mapper resource="xmlmapper/UserMapper.xml"/>-->
-<!--    </mappers>-->
+    <!-- 此方案为扫描 mapper.xml 的文件名 -->
+    <!--    <mappers>-->
+    <!--        <mapper resource="xxxMapper.xml"/>-->
+    <!--    </mappers>-->
     <mappers>
+        <!-- 此方案需要 mapper 的接口与xml 放在同目录，且同名 -->
         <package name="com.jomkie.sm.mapper"/>
     </mappers>
 

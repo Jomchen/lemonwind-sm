@@ -1,6 +1,8 @@
 package com.jomkie.sm.common;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,8 +10,10 @@ public class JomkieEntity<T> implements Serializable, Comparable<T>, Cloneable {
 
     protected Long id;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     protected Date createTime;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     protected Date updateTime;
 
     public JomkieEntity() {
