@@ -24,6 +24,12 @@ public class JomkieSmApplication {
         for (User user : userList) {
             System.out.println(user.toString());
         }
+
+        System.out.println("-------------------------------------------------------------");
+        userList = userMapper.findCondition(6, 15, 0);
+        for (User user : userList) {
+            System.out.println(user.toString());
+        }
     }
 
 }

@@ -17,4 +17,6 @@ public interface UserMapper {
 
     List<User> findAll(@Param("beginAge") Integer beginAge, @Param("endAge") Integer endAge, @Param("sex") Integer sex);
 
+    List<User> findCondition(@Param("beginAge") Integer beginAge, @Param("endAge") Integer endAge, @Param("sex") Integer sex);
+
 }

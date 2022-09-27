@@ -15,4 +15,19 @@
         SELECT * FROM jo_user WHERE age BETWEEN #{beginAge} AND #{endAge} AND sex = #{sex}
     </select>
 
+    <select id="findCondition" resultType="com.jomkie.sm.entity.User">
+        SELECT * FROM jo_user
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="beginAge != null">
+                AND age &gt;= #{beginAge}
+            </if>
+            <if test="endAge != null">
+                AND age &lt;= #{endAge}
+            </if>
+            <if test="sex != null">
+                AND sex = #{sex}
+            </if>
+        </trim>
+    </select>
+
 </mapper>
