@@ -30,6 +30,7 @@ public class JomkieSmApplication {
         for (User user : userList) {
             System.out.println(user.toString());
         }
+
     }
 
 }

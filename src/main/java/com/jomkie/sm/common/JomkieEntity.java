@@ -1,11 +1,13 @@
 package com.jomkie.sm.common;
 
 
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
 
+@ToString
 public class JomkieEntity<T> implements Serializable, Comparable<T>, Cloneable {
 
     protected Long id;
