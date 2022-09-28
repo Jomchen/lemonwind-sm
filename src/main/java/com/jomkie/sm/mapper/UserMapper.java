@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface UserMapper {
 
-    List<User> findAll(@Param("beginAge") Integer beginAge, @Param("endAge") Integer endAge, @Param("sex") Integer sex);
+    List<User> findById(@Param("id") Long id);
 
     List<User> findCondition(@Param("beginAge") Integer beginAge, @Param("endAge") Integer endAge, @Param("sex") Integer sex);
 
