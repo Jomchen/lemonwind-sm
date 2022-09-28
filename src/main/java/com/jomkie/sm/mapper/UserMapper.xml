@@ -6,7 +6,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.jomkie.sm.entity.User">
-        <result column="id" property="id" />
+        <id property="id" column="id"/>
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
         <result column="name" property="name" />
