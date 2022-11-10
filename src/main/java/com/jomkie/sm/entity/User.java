@@ -1,6 +1,8 @@
 package com.jomkie.sm.entity;
 
 
+import java.text.SimpleDateFormat;
+
 import com.jomkie.sm.common.JomkieEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -35,5 +37,22 @@ public class User extends JomkieEntity<User> {
     private String email;
 
     private String realName;
+
+    @Override
+    public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String createTimeStr = sdf.format(createTime);
+        String updateTimeStr = sdf.format(updateTime);
+        return new StringBuilder(this.getClass().getSimpleName())
+            .append(",id: ").append(id)
+            .append(",name: ").append(name)
+            .append(",age: ").append(age)
+            .append(",sex: ").append(sex)
+            .append(",email: ").append(email)
+            .append(",realName: ").append(realName)
+            .append(",createTime: ").append(createTimeStr)
+            .append(",updateTime: ").append(updateTimeStr)
+            .toString();
+    }
 
 }
