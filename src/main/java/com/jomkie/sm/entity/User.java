@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Accessors(chain = true)
-@ToString(callSuper = true)
+// @ToString(callSuper = true)
 public class User extends JomkieEntity<User> {
     private static final long serialVersionUID = 2022092202393840044L;
     /** 物理表名称. */
