@@ -25,7 +25,6 @@ public class JomkieSmApplication {
        List<User> userList = userMapper.findCondition(6, 15, 0);
        System.out.println("查询结果为：");
        printAll(userList);
-       new Object().notifyAll();
     }
 
     public static void printAll(List<User> list) {
