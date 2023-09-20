@@ -12,7 +12,6 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class JomkieSmApplication {
 
@@ -23,10 +22,8 @@ public class JomkieSmApplication {
        SqlSession sqlSession = sqlSessionFactory.openSession();
        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-       List<User> userList;
-
-       System.out.println("-------------------------------------------------------------");
-       userList = userMapper.findCondition(6, 15, 0);
+       List<User> userList = userMapper.findCondition(6, 15, 0);
+       System.out.println("查询结果为：");
        printAll(userList);
        new Object().notifyAll();
     }
