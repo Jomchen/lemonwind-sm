@@ -45,7 +45,7 @@ public class JomkieSmApplication {
             }
         }, "t1");
         t1.start();
-        // 下面行注掉，则t1打断状态为true；如果注掉，t1打断状态为 false
+        // 下面行不注掉，t1自己 false ；下面行注掉，t1自己 true
         // 注掉是为了t1睡眠之前被主线程打断（其它这样确保不严谨）
         // 结论：如果一个 sleep wait join 的线程被打断，则打断标记会被清除
         TimeUnit.SECONDS.sleep(1);
