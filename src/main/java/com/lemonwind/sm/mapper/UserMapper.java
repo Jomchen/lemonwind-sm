@@ -1,6 +1,6 @@
-package com.jomkie.sm.mapper;
+package com.lemonwind.sm.mapper;
 
-import com.jomkie.sm.entity.User;
+import com.lemonwind.sm.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *  Mapper 接口
  * </p>
  *
- * @author Jomkie
+ * @author lemonwind
  * @since 2022-09-22 14:39:44
  */
 public interface UserMapper {

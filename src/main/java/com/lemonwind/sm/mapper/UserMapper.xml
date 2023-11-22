@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jomkie.sm.mapper.UserMapper">
+<mapper namespace="com.lemonwind.sm.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.jomkie.sm.entity.User">
+    <resultMap id="BaseResultMap" type="com.lemonwind.sm.entity.User">
         <id property="id" column="id"/>
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
@@ -27,7 +27,7 @@
         SELECT * FROM jo_user WHERE id = #{id}
     </select>
 
-    <select id="findCondition" resultType="com.jomkie.sm.entity.User">
+    <select id="findCondition" resultType="com.lemonwind.sm.entity.User">
         SELECT * FROM jo_user
         <trim prefix="WHERE" prefixOverrides="AND">
             <if test="beginAge != null">

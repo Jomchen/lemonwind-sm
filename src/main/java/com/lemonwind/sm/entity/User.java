@@ -1,12 +1,11 @@
-package com.jomkie.sm.entity;
+package com.lemonwind.sm.entity;
 
 
 import java.text.SimpleDateFormat;
 
-import com.jomkie.sm.common.JomkieEntity;
+import com.lemonwind.sm.common.LemonwindEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
 import lombok.experimental.Accessors;
 import lombok.NoArgsConstructor;
 
@@ -15,7 +14,7 @@ import lombok.NoArgsConstructor;
  * 
  * </p>
  *
- * @author Jomkie
+ * @author lemonwind
  * @since 2022-09-22 14:39:44
  */
 @Data
@@ -23,7 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Accessors(chain = true)
 // @ToString(callSuper = true)
-public class User extends JomkieEntity<User> {
+public class User extends LemonwindEntity<User> {
     private static final long serialVersionUID = 2022092202393840044L;
     /** 物理表名称. */
     public static final String TABLE_NAME = "jo_user";

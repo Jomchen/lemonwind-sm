@@ -1,7 +1,7 @@
-package com.jomkie.sm;
+package com.lemonwind.sm;
 
-import com.jomkie.sm.entity.User;
-import com.jomkie.sm.mapper.UserMapper;
+import com.lemonwind.sm.entity.User;
+import com.lemonwind.sm.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class JomkieSmApplication {
+public class LemonwindSmApplication {
 
-    public static void main(String[] args) throws IOException, NoSuchMethodException, InterruptedException {
+    public static void main(String[] args) throws IOException {
        String resource = "mybatis-config.xml";
        InputStream inputStream = Resources.getResourceAsStream(resource);
        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);

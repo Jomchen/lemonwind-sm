@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jomkie.sm.mapper.UserMapper">
+<mapper namespace="com.lemonwind.sm.mapper.UserMapper">
 
     <sql id="Base_Column_List">
         id,
@@ -11,7 +11,7 @@
         name, age, sex, email, real_name
     </sql>
 
-    <select id="findAll" resultType="com.jomkie.sm.entity.User">
+    <select id="findAll" resultType="com.lemonwind.sm.entity.User">
         SELECT * FROM jo_user WHERE age BETWEEN #{beginAge} AND #{endAge} AND sex = #{sex}
     </select>
 

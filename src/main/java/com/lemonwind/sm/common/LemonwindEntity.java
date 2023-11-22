@@ -1,4 +1,4 @@
-package com.jomkie.sm.common;
+package com.lemonwind.sm.common;
 
 
 import lombok.ToString;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @ToString
-public class JomkieEntity<T> implements Serializable, Comparable<T>, Cloneable {
+public class LemonwindEntity<T> implements Serializable, Comparable<T>, Cloneable {
 
     protected Long id;
 
@@ -18,16 +18,16 @@ public class JomkieEntity<T> implements Serializable, Comparable<T>, Cloneable {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     protected Date updateTime;
 
-    public JomkieEntity() {
+    public LemonwindEntity() {
         super();
     }
 
-    public JomkieEntity(Long id) {
+    public LemonwindEntity(Long id) {
         super();
         this.id = id;
     }
 
-    public JomkieEntity(Long id, Date createTime, Date updateTime) {
+    public LemonwindEntity(Long id, Date createTime, Date updateTime) {
         this.id = id;
         this.createTime = createTime;
         this.updateTime = updateTime;
