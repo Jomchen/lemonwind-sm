@@ -27,7 +27,8 @@
         SELECT * FROM jo_user WHERE id = #{id}
     </select>
 
-    <select id="findCondition" resultType="com.lemonwind.sm.entity.User">
+    <select id="findCondition" resultMap="BaseResultMap">
+<!--    <select id="findCondition" resultType="com.lemonwind.sm.entity.User">-->
         SELECT * FROM jo_user
         <trim prefix="WHERE" prefixOverrides="AND">
             <if test="beginAge != null">
@@ -40,6 +41,9 @@
                 AND sex = #{sex}
             </if>
         </trim>
+        <if test="keywords != null">
+            ${keywords}
+        </if>
     </select>
 
 </mapper>

@@ -22,7 +22,8 @@ public class LemonwindSmApplication {
        SqlSession sqlSession = sqlSessionFactory.openSession();
        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-       List<User> userList = userMapper.findCondition(6, 15, 0);
+       List<User> userList = userMapper.findCondition(6, 15, 0, " AND email IS NOT NULL");
+//        List<User> userList = userMapper.findCondition(6, 15, 0, " AND email IS NULL");
        System.out.println("查询结果为：");
        printAll(userList);
     }
