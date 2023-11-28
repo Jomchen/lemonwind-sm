@@ -4,10 +4,22 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="config.properties"/>
+
+
     <settings>
         <setting name="autoMappingBehavior" value="FULL"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+        <!-- 指定 mybatis 所用日志的具体实现，未指定时将自动查找 -->
+        <!-- SLF4J | LOG4J | LOG4J2 | JDK_LOGGING | COMMONS_LOGGING | STDOUT_LOGGING -->
+        <setting name="logImpl" value="JDK_LOGGING"/>
+
+        <!-- 指定 mybatis 创建具有延迟加载能力的对象所用到的代理工具。CGLIB | JAVASSIST -->
+<!--        <setting name="proxyFactory" value="CGLIB"/>-->
+        <setting name="proxyFactory" value="JAVASSIST"/>
     </settings>
+
+
     <typeAliases>
         <package name="com.lemonwind.sm.entity"/>
     </typeAliases>
