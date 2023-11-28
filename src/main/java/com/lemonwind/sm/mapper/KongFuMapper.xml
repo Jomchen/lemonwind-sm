@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lemonwind.sm.mapper.KongFuMapper">
+  <resultMap id="BaseResultMap" type="com.lemonwind.sm.entity.KongFu">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="invention_user_id" jdbcType="BIGINT" property="inventionUserId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from jo_kong_fu
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lemonwind.sm.entity.KongFu">
+    insert into jo_kong_fu (id, name, level, 
+      invention_user_id, create_time, update_time
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
+      #{inventionUserId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lemonwind.sm.entity.KongFu">
+    update jo_kong_fu
+    set name = #{name,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      invention_user_id = #{inventionUserId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, name, level, invention_user_id, create_time, update_time
+    from jo_kong_fu
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, level, invention_user_id, create_time, update_time
+    from jo_kong_fu
+  </select>
+</mapper>

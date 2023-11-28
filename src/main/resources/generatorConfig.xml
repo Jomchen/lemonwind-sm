@@ -26,7 +26,7 @@
         2，MyBatis3Simple：类似MyBatis3，只是不生成XXXBySample；
     introspectedColumnImpl：类全限定名，用于扩展MBG
 	-->
-    <context id="DB2Tables" targetRuntime="MyBatis3Simple">
+    <context id="MYSQL8Table" targetRuntime="MyBatis3Simple">
         <!--防止生成重复代码-->
         <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>
 
@@ -34,7 +34,7 @@
             <!--是否去掉生成日期-->
             <property name="suppressDate" value="false"/>
             <!--是否去除注释-->
-            <property name="suppressAllComments" value="false"/>
+            <property name="suppressAllComments" value="true"/>
         </commentGenerator>
 
         <!--连接数据库信息-->
