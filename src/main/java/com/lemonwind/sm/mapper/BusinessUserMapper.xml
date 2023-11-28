@@ -14,11 +14,23 @@
         <result column="sex" property="sex" />
         <result column="email" property="email" />
         <result column="real_name" property="realName" />
-        <collection property="kongFuList" column="id" select="com.lemonwind.sm.mapper.KongFuMapper.findByInventionUserIdKongFus" />
+
+        <!-- 非懒加载 -->
+<!--        <collection-->
+<!--                property="kongFuList"-->
+<!--                column="id"-->
+<!--                select="com.lemonwind.sm.mapper.KongFuMapper.findByInventionUserIdKongFus" />-->
+
+        <!-- 懒加载 -->
+        <collection
+                property="kongFuList"
+                column="id"
+                fetchType="lazy"
+                select="com.lemonwind.sm.mapper.KongFuMapper.findByInventionUserIdKongFus" />
     </resultMap>
 
     <select id="findUserWithKongFu" resultMap="fullUserResultMap">
-        SELECT * FROM jo_user;
+        SELECT * FROM jo_user LIMIT #{count}
     </select>
 
 </mapper>

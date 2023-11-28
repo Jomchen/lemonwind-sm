@@ -26,7 +26,7 @@ public class LemonwindSmApplication {
        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
        SqlSession sqlSession = sqlSessionFactory.openSession();
        BusinessUserMapper businessUserMapper = sqlSession.getMapper(BusinessUserMapper.class);
-       List<BusinessUserDTO> dataList = businessUserMapper.findUserWithKongFu();
+       List<BusinessUserDTO> dataList = businessUserMapper.findUserWithKongFu(3);
 
 //       UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 ////       List<User> dataList = userMapper.findCondition(6, 15, 0, " AND email IS NOT NULL");
