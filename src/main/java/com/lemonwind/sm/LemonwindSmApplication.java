@@ -7,6 +7,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,6 +17,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LemonwindSmApplication {
+    private static final Logger logger = LoggerFactory.getLogger(LemonwindSmApplication.class);
+
 
     public static void main(String[] args) throws IOException {
        String resource = "mybatis-config.xml";
@@ -33,7 +37,10 @@ public class LemonwindSmApplication {
 
     public static void printAll(List<? extends LemonwindEntity> list) {
         if (null == list || list.isEmpty()) { return; }
-        list.forEach(System.out::println);
+//        list.forEach(System.out::println);
+        list.forEach(e -> {
+            System.out.println(e);
+        });
     }
 
     public static void thread00() throws InterruptedException {

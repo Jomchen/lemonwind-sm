@@ -53,26 +53,6 @@
             <artifactId>mybatis</artifactId>
             <version>${mybatis.version}</version>
         </dependency>
-
-        <!-- slf4j -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-nop</artifactId>
-            <version>1.7.2</version>
-        </dependency>
-        <!-- logback-core -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <!-- 引入logback对SLF4J的实现 logback-classic -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
