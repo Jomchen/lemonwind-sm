@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lemonwind.sm.mapper.BusinessUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="fullUserResultMap" type="com.lemonwind.sm.entity.dto.BusinessUserDTO">
+        <id property="id" column="id"/>
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="name" property="name" />
+        <result column="age" property="age" />
+        <result column="sex" property="sex" />
+        <result column="email" property="email" />
+        <result column="real_name" property="realName" />
+        <collection property="kongFuList" column="id" select="com.lemonwind.sm.mapper.KongFuMapper.findByInventionUserIdKongFus" />
+    </resultMap>
+
+    <select id="findUserWithKongFu" resultMap="fullUserResultMap">
+        SELECT * FROM jo_user;
+    </select>
+
+</mapper>

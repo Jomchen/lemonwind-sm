@@ -13,4 +13,7 @@ public interface KongFuMapper {
     List<KongFu> selectAll();
 
     int updateByPrimaryKey(KongFu row);
+
+    List<KongFu> findByInventionUserIdKongFus(Long userId);
+
 }

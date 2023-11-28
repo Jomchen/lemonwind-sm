@@ -1,7 +1,8 @@
 package com.lemonwind.sm;
 
-import com.lemonwind.sm.entity.User;
-import com.lemonwind.sm.mapper.UserMapper;
+import com.lemonwind.sm.common.LemonwindEntity;
+import com.lemonwind.sm.entity.dto.BusinessUserDTO;
+import com.lemonwind.sm.mapper.BusinessUserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -20,20 +21,19 @@ public class LemonwindSmApplication {
        InputStream inputStream = Resources.getResourceAsStream(resource);
        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
        SqlSession sqlSession = sqlSessionFactory.openSession();
-       UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+       BusinessUserMapper businessUserMapper = sqlSession.getMapper(BusinessUserMapper.class);
+       List<BusinessUserDTO> dataList = businessUserMapper.findUserWithKongFu();
 
-       List<User> userList = userMapper.findCondition(6, 15, 0, " AND email IS NOT NULL");
-//        List<User> userList = userMapper.findCondition(6, 15, 0, " AND email IS NULL");
+//       UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+////       List<User> dataList = userMapper.findCondition(6, 15, 0, " AND email IS NOT NULL");
+//        List<User> dataList = userMapper.findCondition(6, 15, 0, " AND email IS NULL");
        System.out.println("查询结果为：");
-       printAll(userList);
+       printAll(dataList);
     }
 
-    public static void printAll(List<User> list) {
-        if (null == list || list.isEmpty()) {
-            return;
-        }
-
-        list.stream().forEach(System.out::println);
+    public static void printAll(List<? extends LemonwindEntity> list) {
+        if (null == list || list.isEmpty()) { return; }
+        list.forEach(System.out::println);
     }
 
     public static void thread00() throws InterruptedException {
