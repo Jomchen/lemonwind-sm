@@ -59,7 +59,7 @@ public class LemonwindEntity<T> implements Serializable, Comparable<T>, Cloneabl
 
     @Override
     public int compareTo(T o) {
-        return equals(o) ? 1 : 0;
+        return equals(o) ? 0 : 1;
     }
 
 }
