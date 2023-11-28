@@ -1,11 +1,9 @@
 package com.lemonwind.sm.entity;
 
-
-import java.text.SimpleDateFormat;
-
 import com.lemonwind.sm.common.LemonwindEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 import lombok.NoArgsConstructor;
 
@@ -21,7 +19,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @Accessors(chain = true)
-// @ToString(callSuper = true)
+@ToString(callSuper = true)
 public class User extends LemonwindEntity<User> {
     private static final long serialVersionUID = 2022092202393840044L;
     /** 物理表名称. */
@@ -36,22 +34,5 @@ public class User extends LemonwindEntity<User> {
     private String email;
 
     private String realName;
-
-    @Override
-    public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String createTimeStr = sdf.format(createTime);
-        String updateTimeStr = sdf.format(updateTime);
-        return new StringBuilder(this.getClass().getSimpleName())
-            .append(",id: ").append(id)
-            .append(",name: ").append(name)
-            .append(",age: ").append(age)
-            .append(",sex: ").append(sex)
-            .append(",email: ").append(email)
-            .append(",realName: ").append(realName)
-            .append(",createTime: ").append(createTimeStr)
-            .append(",updateTime: ").append(updateTimeStr)
-            .toString();
-    }
 
 }

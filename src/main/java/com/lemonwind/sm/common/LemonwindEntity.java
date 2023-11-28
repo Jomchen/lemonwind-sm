@@ -7,7 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-@ToString
+//@ToString
 public class LemonwindEntity<T> implements Serializable, Comparable<T>, Cloneable {
 
     protected Long id;

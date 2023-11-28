@@ -1,6 +1,8 @@
 package com.lemonwind.sm.mapper;
 
 import com.lemonwind.sm.entity.KongFu;
+import com.lemonwind.sm.entity.dto.KongFuDTO;
+
 import java.util.List;
 
 public interface KongFuMapper {
@@ -14,6 +16,6 @@ public interface KongFuMapper {
 
     int updateByPrimaryKey(KongFu row);
 
-    List<KongFu> findByInventionUserIdKongFus(Long userId);
+    List<KongFuDTO> findByInventionUserIdKongFus(Long userId);
 
 }
